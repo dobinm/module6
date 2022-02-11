@@ -11,6 +11,8 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     var locationManager = CLLocationManager()
     
+    @Published var authorizationState = CLAuthorizationStatus.notDetermined
+    
     @Published var restaurants = [Business]()
     @Published var sights = [Business]()
     
@@ -30,6 +32,10 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     //MARK -  Location Manager Delegate Methods
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        //update authorization state
+        
+        authorizationState = locationManager.authorizationStatus
+        
         if locationManager.authorizationStatus == .authorizedAlways ||
             locationManager.authorizationStatus == .authorizedWhenInUse {
             
@@ -96,15 +102,28 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
                         let decoder = JSONDecoder()
                         let result = try decoder.decode(BusinessSearch.self, from: data!)
                         
+                        // sort businesses
+                        var businesses = result.businesses
+                        businesses.sort { (b1, b2) -> Bool in
+                            return b1.distance ?? 0 < b2.distance ?? 0
+                            
+                        }
+                        
+                        //call the get image function of the business
+                        for b in businesses {
+                            b.getImageData()
+                        }
+                        
+                        
                         DispatchQueue.main.async {
                             
                             //assign results to property
                             
                             switch category {
                             case Constants.sightsKey:
-                                self.sights = result.businesses
+                                self.sights = businesses
                             case Constants.restuarantsKey:
-                                self.restaurants = result.businesses
+                                self.restaurants = businesses
                             default:
                                 break
                             }
@@ -112,7 +131,7 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
                         
                         
 
-
+ 
                     }
                     
                     catch{
