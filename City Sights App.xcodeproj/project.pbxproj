@@ -13,6 +13,7 @@
 		DC0CB6B027A32D2D0038E655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0CB6AF27A32D2D0038E655 /* Assets.xcassets */; };
 		DC0CB6B327A32D2D0038E655 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0CB6B227A32D2D0038E655 /* Preview Assets.xcassets */; };
 		DC0CB6BD27A3312F0038E655 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0CB6BC27A3312F0038E655 /* ContentModel.swift */; };
+		DC2B849627B6EAE7004DFF70 /* BusinessMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2B849527B6EAE7004DFF70 /* BusinessMap.swift */; };
 		DCC74D7427B29AEE001C15A5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC74D7327B29AEE001C15A5 /* HomeView.swift */; };
 		DCC74D7727B2A245001C15A5 /* BusinessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC74D7627B2A245001C15A5 /* BusinessList.swift */; };
 		DCC74D7927B451DB001C15A5 /* BusinessSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC74D7827B451DA001C15A5 /* BusinessSectionHeader.swift */; };
@@ -31,6 +32,7 @@
 		DC0CB6AF27A32D2D0038E655 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC0CB6B227A32D2D0038E655 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC0CB6BC27A3312F0038E655 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		DC2B849527B6EAE7004DFF70 /* BusinessMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMap.swift; sourceTree = "<group>"; };
 		DCC74D7327B29AEE001C15A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DCC74D7627B2A245001C15A5 /* BusinessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessList.swift; sourceTree = "<group>"; };
 		DCC74D7827B451DA001C15A5 /* BusinessSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSectionHeader.swift; sourceTree = "<group>"; };
@@ -121,11 +123,20 @@
 				DC0CB6AD27A32D240038E655 /* LaunchView.swift */,
 				DCC74D7027B29A77001C15A5 /* Home */,
 				DCC74D7527B2A21C001C15A5 /* List */,
+				DC2B849427B6EACA004DFF70 /* Map */,
 				DC0B966B27B532A400A1221E /* Detail */,
 				DCC74D7127B29A83001C15A5 /* Denied */,
 				DCC74D7227B29A8E001C15A5 /* Onboarding */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DC2B849427B6EACA004DFF70 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				DC2B849527B6EAE7004DFF70 /* BusinessMap.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		DCC74D7027B29A77001C15A5 /* Home */ = {
@@ -248,6 +259,7 @@
 				DC0B966D27B532D200A1221E /* BusinessDetail.swift in Sources */,
 				DCEC29C427B18E11003E72D2 /* BusinessSearch.swift in Sources */,
 				DCC74D7727B2A245001C15A5 /* BusinessList.swift in Sources */,
+				DC2B849627B6EAE7004DFF70 /* BusinessMap.swift in Sources */,
 				DCC74D7B27B45320001C15A5 /* BusinessSection.swift in Sources */,
 				DC0CB6BD27A3312F0038E655 /* ContentModel.swift in Sources */,
 				DCEC29C727B190C1003E72D2 /* Constants.swift in Sources */,
